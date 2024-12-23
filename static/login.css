@@ -1,0 +1,143 @@
+  /* General page styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.form {
+  padding: 30px;
+  width: 50%;
+}
+
+h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 15px 20px;
+  padding-left: 40px; /* Space for the icon */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input-field i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Image Section */
+.image {
+  position: relative;
+  width: 50%;
+  background-image: url('your-image-url.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.overlay p {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .image {
+    width: 100%;
+    height: 300px;
+  }
+
+  .overlay h3 {
+    font-size: 20px;
+  }
+
+  .overlay p {
+    font-size: 16px;
+  }
+}
