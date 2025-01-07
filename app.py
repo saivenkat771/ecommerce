@@ -6,15 +6,20 @@ from adminmail import adminsendmail
 from adminotp import adotp
 import os
 from itemid import itemidotp
+db=os.environ['RDS_DB_NAME']
+user=os.environ['RDS_USERNAME']
+password=os.environ['RDS_PASSWORD']
+host=os.environ['RDS_HOSTNAME']
+port=os.environ['RDS_PORT']
 import razorpay
 RAZORPAY_KEY_ID='rzp_test_3QETrrHCwBqykM'
 RAZORPAY_KEY_SECRET='WH9YfRNLBy8CC16hddfV2zVo'
 client=razorpay.Client(auth=(RAZORPAY_KEY_ID,RAZORPAY_KEY_SECRET))
-mydb=mysql.connector.connect(host='localhost',
-user='root',
-password='root',
-db='ecommerce'
-)
+# mydb=mysql.connector.connect(host='localhost',
+# user='root',
+# password='root',
+# db='ecommerce'
+# )
 app=Flask(__name__)
 app.secret_key='jnvnkdfjvndjs'
 
