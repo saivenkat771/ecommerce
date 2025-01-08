@@ -7,13 +7,6 @@ from adminotp import adotp
 import os
 from itemid import itemidotp
 import razorpay
-db=os.environ['RDS_DB_NAME']
-user=os.environ['RDS_USERNAME']
-password=os.environ['RDS_PASSWORD']
-host=os.environ['RDS_HOSTNAME']
-port=os.environ['RDS_PORT']
-with mysql.connector.connect(host='host',user='user',password='password',db='db'):
-cursor=mydb.cursor(buffered=True)
 RAZORPAY_KEY_ID='rzp_test_3QETrrHCwBqykM'
 RAZORPAY_KEY_SECRET='WH9YfRNLBy8CC16hddfV2zVo'
 client=razorpay.Client(auth=(RAZORPAY_KEY_ID,RAZORPAY_KEY_SECRET))
@@ -22,8 +15,15 @@ client=razorpay.Client(auth=(RAZORPAY_KEY_ID,RAZORPAY_KEY_SECRET))
 # password='root',
 # db='ecommerce'
 # )
+db=os.environ['RDS_DB_NAME']
+user=os.environ['RDS_USERNAME']
+password=os.environ['RDS_PASSWORD']
+host=os.environ['RDS_HOSTNAME']
+port=os.environ['RDS_PORT']
 app=Flask(__name__)
 app.secret_key='jnvnkdfjvndjs'
+with mysql.connector.connect(host='host',user='user',password='password',db='db'):
+cursor=mydb.cursor(buffered=True)
 
 @app.route('/')
 def base():
